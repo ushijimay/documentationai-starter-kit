@@ -1,0 +1,155 @@
+---
+title: Skill3 Features
+description: Explore the core capabilities of Skill3 to streamline your documentation workflow and collaboration.
+---
+
+## Overview
+
+Skill3 provides a comprehensive set of tools to manage your project documentation effectively. You can organize content into structured spaces, search efficiently, track changes with version control, collaborate seamlessly, and customize your workspace to fit your needs.
+
+These features help teams maintain up-to-date docs without the complexity of traditional tools. Start by creating a new space for your project, then leverage categorization and search to keep everything accessible.
+
+<Callout kind="info">
+Skill3 integrates familiar concepts like folders and tags, making it easy to transition from other documentation platforms.
+</Callout>
+
+## Key Features
+
+Discover the main capabilities through these highlighted features.
+
+<Columns cols={3}>
+  <Card title="Document Organization" icon="folder" href="#organization">
+    Categorize docs with tags and nested folders for intuitive navigation.
+  </Card>
+  <Card title="Search and Filtering" icon="search" href="#search">
+    Find content instantly with advanced filters and full-text search.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#version-control">
+    Track changes, revert edits, and maintain history effortlessly.
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Collaboration Tools" icon="users" href="#collaboration">
+    Comment, @mention teammates, and review changes in real-time.
+  </Card>
+  <Card title="Customization Options" icon="settings" href="#customization">
+    Tailor spaces with themes, permissions, and custom fields.
+  </Card>
+</Columns>
+
+## Document Organization and Categorization
+
+Organize your documentation using folders, tags, and custom categories. Create hierarchies that reflect your project's structure.
+
+<Steps>
+  <Step title="Create a Space" icon="home">
+    Navigate to your dashboard and select "New Space" to start organizing docs.
+  </Step>
+  <Step title="Add Folders and Tags" icon="tag">
+    Drag docs into folders or apply tags like `api`, `guide`, or `release-notes`.
+  </Step>
+  <Step title="Nest Categories" icon="layers">
+    Build nested structures for complex projects, such as `docs/api/v1/endpoints`.
+  </Step>
+</Steps>
+
+This approach keeps large documentation sets manageable.
+
+## Search and Filtering Tools
+
+Locate specific content quickly with Skill3's powerful search.
+
+<Tabs>
+  <Tab title="Basic Search" icon="search">
+    Enter keywords to find docs across all spaces.
+
+    ```
+    business skills
+    ```
+  </Tab>
+  <Tab title="Advanced Filters" icon="filter">
+    Combine tags, dates, and authors.
+
+    ```
+    tag:certification after:2024-01-01
+    ```
+  </Tab>
+  <Tab title="Saved Searches" icon="bookmark">
+    Pin frequent queries for one-click access.
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+Use quotes for exact phrases, like `"user authentication"`, to refine results.
+</Callout>
+
+## Version Control for Docs
+
+Skill3 offers built-in version history similar to Git, but simplified for non-developers.
+
+View diffs, restore previous versions, and branch for experiments.
+
+<CodeGroup tabs="Current,Previous">
+  ```markdown
+  ## User Guide
+
+  Welcome to Skill3.
+
+  - Feature A
+  - Feature B (new)
+  ```
+  ```markdown
+  ## User Guide
+
+  Welcome to Skill3.
+
+  - Feature A
+  ```
+</CodeGroup>
+
+Access history via the page menu: click the clock icon to browse changes.
+
+## Collaboration and Commenting
+
+Enable team input without disrupting the main document.
+
+<Expandable title="Inline Comments" default-open="true">
+  Highlight text, add comments, and resolve threads. @mention users for notifications.
+
+  ```
+  @team Review this section for accuracy.
+  ```
+</Expandable>
+
+<Expandable title="Review Workflows">
+  Assign reviewers, track approvals, and merge changes safely.
+</Expandable>
+
+## Customization Options
+
+Tailor Skill3 spaces to your workflow.
+
+| Option | Description | Default |
+|--------|-------------|---------|
+| Themes | Light/dark mode or custom colors | Light |
+| Permissions | Role-based access (view, edit, admin) | Project-wide |
+| Custom Fields | Add metadata like priority or status | None |
+| Layouts | Sidebar width, editor type (markdown/visual) | Auto |
+
+Configure via Space Settings.
+
+<Callout kind="success">
+Customize early to match your team's preferences and boost adoption.
+</Callout>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Set up your first space in minutes.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your docs with proper access controls.
+  </Card>
+</Columns>

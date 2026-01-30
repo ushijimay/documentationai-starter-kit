@@ -1,0 +1,146 @@
+---
+title: Integrations and Extensions
+description: Connect Skill3 with third-party tools to enhance your documentation management and automate workflows.
+---
+
+## Overview
+
+Skill3 supports seamless integrations with popular third-party services, allowing you to automate documentation workflows, receive real-time notifications, and extend functionality. Use webhooks for event-driven updates, connect via API for custom applications, or leverage no-code tools like Zapier.
+
+<Callout kind="info">
+Review Skill3's integration permissions in your account settings before connecting external services.
+</Callout>
+
+## Popular Integrations
+
+Connect Skill3 to your favorite tools for enhanced productivity.
+
+<Columns cols={3}>
+  <Card title="GitHub" icon="github" href="https://github.com">
+    Sync documentation changes with repositories. Automatically create PRs for doc updates.
+  </Card>
+  <Card title="Slack" icon="message-circle" href="https://slack.com">
+    Get instant notifications for doc publishes, comments, and approvals in your channels.
+  </Card>
+  <Card title="Zapier" icon="zap" href="https://zapier.com">
+    Build no-code automations with 5000+ apps, like exporting docs to Google Drive.
+  </Card>
+</Columns>
+
+## Webhook Setup
+
+Set up webhooks to receive Skill3 events like document updates or publishes.
+
+<Steps>
+  <Step title="Create Webhook" icon="plus">
+    Navigate to Account > Integrations > Webhooks and click "New Webhook".
+  </Step>
+  <Step title="Configure Endpoint" icon="settings">
+    Enter your endpoint URL, such as `https://your-webhook-url.com/skill3`.
+  </Step>
+  <Step title="Select Events" icon="bell">
+    Choose events like `doc.updated` or `doc.published`.
+  </Step>
+  <Step title="Test and Save" icon="check-circle">
+    Send a test payload and verify receipt.
+  </Step>
+</Steps>
+
+Example webhook payload:
+
+<CodeGroup tabs="JSON">
+  ```json
+  {
+    "event": "doc.updated",
+    "doc_id": "doc_123abc",
+    "timestamp": "2024-10-15T10:30:00Z",
+    "user_id": "user_456def"
+  }
+  ```
+</CodeGroup>
+
+## API Access for Custom Integrations
+
+Build custom connections using Skill3's REST API at `https://api.example.com/v1`.
+
+<Request tabs="cURL,JavaScript" show-lines="true">
+  ```bash
+  curl -X POST https://api.example.com/v1/docs \
+    -H "Authorization: Bearer YOUR_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{"title": "New Doc", "content": "Hello World"}'
+  ```
+  ```javascript
+  const response = await fetch('https://api.example.com/v1/docs', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer YOUR_API_KEY',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      title: 'New Doc',
+      content: 'Hello World'
+    })
+  });
+  ```
+</Request>
+
+<Response tabs="200">
+  ```json
+  {
+    "id": "doc_123abc",
+    "title": "New Doc",
+    "status": "success"
+  }
+  ```
+</Response>
+
+<ParamField path="docs" param-type="string" required="true">
+  Endpoint for document operations.
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token obtained from your Skill3 dashboard.
+</ParamField>
+
+## Exporting Documentation
+
+Export your Skill3 docs to various formats for sharing or archiving.
+
+<Tabs>
+  <Tab title="PDF" icon="file-text">
+    Use the export button in the editor to generate PDFs. Ideal for printed guides.
+  </Tab>
+  <Tab title="Markdown" icon="code">
+    Export as Markdown for GitHub repos or static sites.
+
+    ```bash
+    curl -X GET "https://api.example.com/v1/docs/export/md?doc_id=doc_123abc" \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      --output doc.md
+    ```
+  </Tab>
+  <Tab title="HTML" icon="globe">
+    Get embeddable HTML snippets for blogs or websites.
+  </Tab>
+</Tabs>
+
+## Embedding External Content
+
+Embed third-party content directly into Skill3 docs using iframes or oEmbeds.
+
+<Expandable title="Advanced Embedding Options" default-open="false">
+  Supported providers include YouTube, Figma, and Google Maps. Paste the embed code in the editor's embed block.
+
+  Example iframe:
+
+  ```
+  <iframe src="https://www.youtube.com/embed/VIDEO_ID" width="560" height="315"></iframe>
+  ```
+
+  Ensure embeds comply with Skill3's security policies to avoid rendering issues.
+</Expandable>
+
+<Callout kind="tip">
+Explore the [API Reference](/api-reference) for full endpoint details and rate limits.
+</Callout>

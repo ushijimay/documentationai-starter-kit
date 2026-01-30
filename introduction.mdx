@@ -1,0 +1,114 @@
+---
+title: Introduction to Skill3
+description: Discover Skill3, a comprehensive SaaS platform for organizing and managing project documentation with ease and efficiency.
+---
+
+<Callout kind="info" title="Starter Kit Template">
+  This documentation was generated as a starter kit template based on your brand. Please review and customize the content to accurately reflect your product's features, APIs, and capabilities.
+</Callout>
+
+## Overview
+
+Skill3 provides a powerful SaaS platform that helps you organize, manage, and collaborate on project documentation effortlessly. You create structured docs, embed multimedia, and integrate with your tools to keep everything centralized. Focus on your projects while Skill3 handles the documentation workflow.
+
+Key benefits include intuitive organization, real-time collaboration, and seamless search across all your docs. Whether you manage software projects, marketing campaigns, or internal wikis, Skill3 scales to your needs.
+
+## Core Features
+
+Explore the essential capabilities that make Skill3 stand out.
+
+<Columns cols={3}>
+  <Card title="Document Organization" icon="folder" href="#organization">
+    Structure your docs with folders, tags, and hierarchies for easy navigation.
+  </Card>
+  <Card title="Real-Time Collaboration" icon="users" href="#collaboration">
+    Invite team members to edit, comment, and version control simultaneously.
+  </Card>
+  <Card title="Advanced Search" icon="search" href="#search">
+    Find any document instantly with full-text search and filters.
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Embed & Integrate" icon="link" href="#integrations">
+    Embed code snippets, videos, and connect to GitHub, Slack, or your API.
+  </Card>
+  <Card title="Version History" icon="git-branch" href="#versions">
+    Track changes with full audit logs and rollback options.
+  </Card>
+</Columns>
+
+## Who Should Use Skill3
+
+<Expandable title="Teams and Use Cases" default-open="true">
+
+Skill3 suits development teams building API docs, product managers maintaining guides, and support teams handling knowledge bases. You benefit if you need centralized, searchable documentation without the hassle of static sites or spreadsheets.
+
+- **Developers**: Document APIs and codebases.
+- **PMs & Marketers**: Create user guides and onboarding materials.
+- **Support**: Build self-service help centers.
+
+</Expandable>
+
+## Getting Started
+
+Jump in quickly with these steps.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Create your account at `https://app.skill3.com/register`. Use your email or SSO.
+  </Step>
+  <Step title="Create Workspace" icon="home">
+    Set up a new workspace for your project.
+    
+    ```javascript
+    // Example API call to create workspace
+    const response = await fetch('https://api.example.com/v1/workspaces', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+      body: JSON.stringify({ name: 'My Project' })
+    });
+    ```
+  </Step>
+  <Step title="Upload First Doc" icon="upload">
+    Drag and drop your Markdown files or start from a template.
+  </Step>
+  <Step title="Invite Team" icon="mail">
+    Share your workspace link and manage permissions.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  // Initialize Skill3 client
+  import { Skill3 } from '@skill3/sdk';
+  
+  const client = new Skill3({ apiKey: 'YOUR_API_KEY' });
+  const docs = await client.docs.list();
+  ```
+  ```python
+  # Initialize Skill3 client
+  from skill3 import Client
+  
+  client = Client(api_key='YOUR_API_KEY')
+  docs = client.docs.list()
+  ```
+</CodeGroup>
+
+## Quick Navigation
+
+<Card title="Quickstart Guide" icon="rocket" href="/quickstart">
+  Set up your first workspace in under 5 minutes.
+</Card>
+
+<Card title="Authentication" icon="lock" href="/authentication">
+  Secure your API access and manage tokens.
+</Card>
+
+<Card title="Changelog" icon="git-commit" href="/changelog">
+  Stay updated with the latest releases.
+</Card>
+
+<Callout kind="tip">
+  Ready to dive deeper? Head to the [Quickstart](/quickstart) guide next.
+</Callout>

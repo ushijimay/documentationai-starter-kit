@@ -1,0 +1,182 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and new features released in Skill3.
+---
+
+## Recent Updates
+
+Stay informed about the latest releases. Review the details below to understand new features, improvements, and any required actions.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added support for custom categories like business, certification, conversation, and travel
+- Introduced real-time collaboration in documentation rooms
+- New search functionality with tag filtering
+
+## Improvements
+
+- Enhanced performance for large documentation projects
+- Updated UI components for better mobile responsiveness
+
+## Bug Fixes
+
+- Fixed login redirect issues after authentication
+- Resolved search query encoding problems
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Dashboard overview for project documentation
+- Integration with external authentication providers
+
+## Bug Fixes
+
+- Corrected room access permissions
+- Fixed markdown rendering for special characters
+
+## Improvements
+
+- Optimized database queries for faster load times
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Initial Release
+
+- Core documentation management system
+- User rooms and project organization
+- Basic search and category tagging
+
+## Breaking Changes
+
+- Initial schema changes require database migration
+
+</Update>
+
+## Upcoming Features
+
+Preview what's coming next to plan your integration.
+
+<Columns cols={2}>
+  <Card title="Advanced Analytics" icon="bar-chart-3" href="#analytics">
+    Track documentation usage and engagement metrics.
+  </Card>
+  <Card title="AI-Powered Search" icon="search" href="#ai-search">
+    Semantic search across all your projects.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#version-control">
+    Full Git integration for docs.
+  </Card>
+</Columns>
+
+## Migration Guide
+
+Follow these steps to update your Skill3 instance to the latest version.
+
+<Callout kind="alert">
+Before migrating, back up your database and configuration files.
+</Callout>
+
+<Steps>
+  <Step title="Backup Data" icon="database">
+
+    Create a full backup of your current setup.
+
+````bash
+pg_dump -U youruser skill3_db > skill3_backup_$(date +%Y%m%d).sql
+````
+
+  </Step>
+  <Step title="Update Package" icon="package">
+
+    Install the latest version using your package manager.
+
+    <CodeGroup tabs="npm,yarn">
+````bash
+npm install skill3@latest
+````
+````bash
+yarn add skill3@latest
+````
+    </CodeGroup>
+
+  </Step>
+  <Step title="Run Migrations" icon="git-merge">
+
+    Execute database migrations.
+
+````bash
+npx skill3 migrate
+````
+
+  </Step>
+  <Step title="Restart Service" icon="refresh-cw">
+
+    Restart your Skill3 application.
+
+````bash
+systemctl restart skill3
+# or
+pm2 restart skill3
+````
+
+  </Step>
+</Steps>
+
+<Expandable title="Detailed Migration Notes for v1.2.0" default-open="false">
+
+If you encounter issues with custom categories, update your configuration:
+
+````json
+{
+  "categories": {
+    "enabled": true,
+    "defaults": ["business", "certification", "conversation", "travel"]
+  }
+}
+````
+
+Review the full migration script in the release notes on GitHub.
+
+</Expandable>
+
+## How to Stay Updated
+
+<Tabs>
+  <Tab title="GitHub Releases" icon="github">
+
+    Subscribe to releases for instant notifications.
+
+    Visit [Skill3 GitHub](https://github.com/skill3/releases).
+
+  </Tab>
+  <Tab title="API Version Check" icon="api">
+
+    Query the API to check your current version.
+
+    <Request tabs="cURL,JavaScript">
+````bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.example.com/v1/status
+````
+````javascript
+const response = await fetch('https://api.example.com/v1/status', {
+  headers: { 'Authorization': `Bearer ${YOUR_API_KEY}` }
+});
+const data = await response.json();
+console.log(data.version);
+````
+    </Request>
+
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+Check this changelog regularly or subscribe to updates to ensure you benefit from the latest enhancements in Skill3.
+</Callout>
