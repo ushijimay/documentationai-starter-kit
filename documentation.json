@@ -126,7 +126,7 @@
         "pages": [
           {
             "title": "Part1",
-            "path": "part1"
+            "path": "toeic_600_reading/Grammer"
           }
         ]
       },
@@ -135,7 +135,7 @@
         "pages": [
           {
             "title": "名詞・冠詞",
-            "path": "meishi-kanshi"
+            "path": "business_grammer/01.meishi-kanshi"
           }
         ]
       }
