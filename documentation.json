@@ -120,6 +120,24 @@
             "icon": "history"
           }
         ]
+      },
+      {
+        "tab": "TOEIC Reading 600点",
+        "pages": [
+          {
+            "title": "Part1",
+            "path": "part1"
+          }
+        ]
+      },
+      {
+        "tab": "ビジネス英文法",
+        "pages": [
+          {
+            "title": "名詞・冠詞",
+            "path": "meishi-kanshi"
+          }
+        ]
       }
     ]
   }
