@@ -140,5 +140,8 @@
         ]
       }
     ]
-  }
+  },
+  "template": "atlas",
+  "title": "Book3",
+  "description": "Doc for Book3.ai"
 }
